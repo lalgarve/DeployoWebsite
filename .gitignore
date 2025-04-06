@@ -23,4 +23,20 @@ go.work.sum
 
 # env file
 .env
+
 node_modules/
+Example
+
+# Bytecode e caches do Python
+__pycache__/
+*.py[cod]  # Arquivos .pyc, .pyo, .pyd
+*.pyo
+*.pyd
+
+# Ambientes virtuais
+venv/
+env/
+.venv/
+.env/
+virtualenv/
+ENV/
