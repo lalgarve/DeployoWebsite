@@ -12,7 +12,6 @@ def markdown_files():
         'target_file_not_existing': base_dir / 'target-correct-not-existing.md'
     }
 
-
 def test_merge_files_source_only_git(markdown_files, mocker):
     """
     Test when the source file exists and the target file does not exist.
@@ -22,6 +21,14 @@ def test_merge_files_source_only_git(markdown_files, mocker):
         'src.git_client.GitClient.get_file_creation_info',
         return_value={'created_at': '2023-11-02T10:00:00', 'author': 'user1'}
     )
+
+    mock_generate_summary = mocker.patch(
+        'scr.documentation.generate_ai_content.generate_ai_content',
+        return_value="""Summaries:
+    pt-br: O Resume Builder System utiliza Spring Boot e AWS Lambda para criar e gerenciar currículos eficientemente, otimizando custos. A arquitetura inclui camadas de modelos, serviços, controladores, repositórios e utilitários, com integração AWS via S3 e Lambda, promovendo modularidade e escalabilidade.
+    en: The Resume Builder System uses Spring Boot and AWS Lambda for efficient resume creation and management, optimizing costs. It features layered models, services, controllers, repositories, and utilities, with AWS integration via S3 and Lambda, ensuring modularity and scalability."""
+    )
+
     markdown = Markdown(markdown_files['source_file_correct'], markdown_files['target_file_not_existing'], '.')
 
     # Act
