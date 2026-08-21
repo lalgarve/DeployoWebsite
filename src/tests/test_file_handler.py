@@ -89,9 +89,10 @@ def test_should_traverse_directory_valid():
 
 
 def test_should_traverse_directory_excluded():
-    """Tests if the directories 'uml' and 'backlog' should not be traversed."""
+    """Tests if the directories 'uml', 'backlog' and 'context' should not be traversed."""
     assert should_traverse_directory('uml') is False
     assert should_traverse_directory('backlog') is False
+    assert should_traverse_directory('context') is False
 
 
 # Testes de determine_file_actions (do unittest)

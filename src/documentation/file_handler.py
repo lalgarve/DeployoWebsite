@@ -11,12 +11,14 @@ class FileHandler:
 def should_traverse_directory(directory_name):
     """
     Determines if a directory should be traversed.
-    Excludes directories named 'uml' and 'backlog'.
+    Excludes directories named 'uml', 'backlog' and 'context'.
+    'context' holds AI/session-continuity notes (e.g. iteration logs) that are not
+    meant to be published as documentation.
 
     :param directory_name: Name of the directory to check.
     :return: True if the directory should be traversed, False otherwise.
     """
-    return directory_name not in {'uml', 'backlog'}
+    return directory_name not in {'uml', 'backlog', 'context'}
 
 
 def determine_file_actions(file_path):
