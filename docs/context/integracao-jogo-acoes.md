@@ -39,7 +39,11 @@ de import deste repositório pula diretórios chamados `context` pelo mesmo moti
    para terminar o pipeline novo e aposentar o antigo, em vez de manter os dois.
 4. **Página de apresentação do projeto no portfólio** — decidir estrutura de conteúdo (ex.
    `content/pt-br/portfolio/jogo-acoes/_index.md`) com descrição, link do repositório,
-   screenshots, e como ela referencia os docs técnicos importados.
+   screenshots, e como ela referencia os docs técnicos importados. Rascunho inicial de URLs
+   em `docs/mapa-site-e-deploy.md` do [`lalgarve/DeployoInfra`](https://github.com/lalgarve/DeployoInfra)
+   (branch `docs/mapa-site-e-deploy`): a página linkaria `.../docs/jogo-acoes/` (documentação)
+   e `jogo-acoes.deployo.io` (a aplicação rodando de verdade — depende da VPS/Docker Compose
+   descrita na Iteração 5 do roadmap do jogo-acoes, ainda não implementada).
 
 ## Outras práticas do jogo-acoes avaliadas para este repositório
 

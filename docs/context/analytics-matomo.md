@@ -10,8 +10,12 @@ Matomo Cloud), rodando em Docker na mesma VPS onde a aplicação e o banco de da
 em containers (ver `docs/roadmap.md` do jogo-acoes, Iteração 5 — VPS + Docker Compose).
 
 A config Docker do Matomo (docker-compose, volumes, backup do banco do Matomo) fica num
-**repositório de infra separado**, não neste repositório nem no jogo-acoes — decisão tomada
-em conversa, repositório ainda não anexado/criado nesta sessão.
+**repositório de infra separado**, não neste repositório nem no jogo-acoes. O repositório
+existe agora: [`lalgarve/DeployoInfra`](https://github.com/lalgarve/DeployoInfra) — passou a
+ser responsável pela infra completa (site, Matomo e os projetos do portfólio, não só o
+Matomo). Mapa de domínios/URLs e estratégia de deploy por projeto em
+`docs/mapa-site-e-deploy.md` nesse repositório (branch `docs/mapa-site-e-deploy`, ainda não
+mesclada — domínio proposto para o Matomo lá: `analytics.deployo.io`).
 
 ## O que cabe no DeployoWebsite
 
@@ -22,10 +26,10 @@ sobrescreve/estende o `<head>` do tema com o script assíncrono do Matomo.
 
 ## Pendências
 
-1. **Repositório de infra**: criar ou anexar à sessão quando existir, para o docker-compose
-   do Matomo.
-2. **Domínio/URL da instância Matomo** (ex. `analytics.deployo.io`) — necessário antes de
-   escrever o snippet, já que ele aponta pra URL do tracker.
+1. ~~Repositório de infra~~ — feito, ver acima.
+2. **Domínio/URL da instância Matomo** — proposta `analytics.deployo.io` registrada no mapa
+   do DeployoInfra, ainda não confirmada/implementada. Necessário antes de escrever o
+   snippet, já que ele aponta pra URL do tracker.
 3. **Site ID do Matomo** — gerado ao criar o site dentro do próprio Matomo; necessário pro
    snippet.
 4. **Implementar o partial no Docsy** — depende dos dois itens acima.
