@@ -68,7 +68,7 @@ def process_files(source, destination, source_repo_path):
      for item in os.listdir(source):
          source_item = os.path.join(source, item)
          destination_item = os.path.join(destination, item)
-         if os.path.isdir(source_item) and item != 'uml':
+         if os.path.isdir(source_item) and item not in ('uml', 'backlog', 'context'):
              process_files(source_item, destination_item, source_repo_path)
          else:
              filename, extension = os.path.splitext(item)
