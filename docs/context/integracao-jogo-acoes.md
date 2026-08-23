@@ -48,9 +48,9 @@ commits semânticos com tipo `decision`, branches/PRs, docs vivas por iteração
 de cobertura obrigatório) explicitamente desenhado para ser copiável entre projetos.
 Avaliação rápida do que se aplica aqui:
 
-- **Commits semânticos + tipo `decision`**: aplicável — o histórico deste repo já usa
-  `feat:`/`fix:` de forma inconsistente (`Feat:` maiúsculo em alguns commits); vale
-  padronizar e adotar `decision:` para decisões como as registradas acima.
+- **Commits semânticos + tipo `decision`**: **implementado** (commit `79817b1`) — convenção
+  documentada em `CLAUDE.md` e validada por `.githooks/commit-msg`
+  (`git config core.hooksPath .githooks` para ativar por clone/sessão).
 - **CI com suíte de testes e piso de cobertura**: aplicável e é um gap real — não existe
   `.github/` neste repositório, nada roda automaticamente (nem os testes Python já
   existentes em `src/tests/`).
@@ -63,5 +63,5 @@ Avaliação rápida do que se aplica aqui:
   seria mais robusto (e teria ajudado a expor o bug do mock com path errado
   `scr.documentation...` em vez de `src.documentation...`).
 
-Nenhuma dessas foi implementada ainda — registradas aqui para não se perder caso a decisão
-de adotá-las seja tomada numa sessão futura.
+As demais seguem não implementadas — registradas aqui para não se perder caso a decisão de
+adotá-las seja tomada numa sessão futura.
