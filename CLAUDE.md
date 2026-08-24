@@ -26,6 +26,13 @@ Formato da primeira linha:
 `tipo` sempre em minúsculo. Sem exceção por o commit ser pequeno, de documentação, ou feito
 por uma sessão de IA — todo commit segue o formato.
 
+### Idioma
+
+Mensagens de commit (título e corpo) são em **inglês** — mesma regra do jogo-acoes
+(`docs/desenvolvimento.md` lá, tabela "Idioma"): código e commits em inglês, documentação de
+projeto (`docs/*.md`, este arquivo) em português. Título de PR e mensagem de merge seguem a
+mesma regra, por serem essencialmente uma mensagem de commit.
+
 ### Corpo da mensagem
 
 Para uma mudança não trivial:
@@ -53,7 +60,8 @@ git config core.hooksPath .githooks
 
 Commits anteriores a esta convenção (`Feat:` maiúsculo, ou sem tipo algum, ex. commit
 `bbaae3b`) não foram reescritos — histórico existente não é alterado, a convenção vale a
-partir daqui.
+partir daqui. O mesmo vale para a regra de idioma: commits já pushed com corpo em português
+(ex. `f84f3a5`, `3563dac`) não são reescritos; commits a partir de agora vão em inglês.
 
 ## Pastas de contexto de IA
 
