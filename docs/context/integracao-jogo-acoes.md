@@ -39,7 +39,11 @@ de import deste repositório pula diretórios chamados `context` pelo mesmo moti
    para terminar o pipeline novo e aposentar o antigo, em vez de manter os dois.
 4. **Página de apresentação do projeto no portfólio** — decidir estrutura de conteúdo (ex.
    `content/pt-br/portfolio/jogo-acoes/_index.md`) com descrição, link do repositório,
-   screenshots, e como ela referencia os docs técnicos importados.
+   screenshots, e como ela referencia os docs técnicos importados. Rascunho inicial de URLs
+   em `docs/mapa-site-e-deploy.md` do [`lalgarve/DeployoInfra`](https://github.com/lalgarve/DeployoInfra)
+   (branch `docs/mapa-site-e-deploy`): a página linkaria `.../docs/jogo-acoes/` (documentação)
+   e `jogo-acoes.deployo.io` (a aplicação rodando de verdade — depende da VPS/Docker Compose
+   descrita na Iteração 5 do roadmap do jogo-acoes, ainda não implementada).
 
 ## Outras práticas do jogo-acoes avaliadas para este repositório
 
@@ -48,9 +52,9 @@ commits semânticos com tipo `decision`, branches/PRs, docs vivas por iteração
 de cobertura obrigatório) explicitamente desenhado para ser copiável entre projetos.
 Avaliação rápida do que se aplica aqui:
 
-- **Commits semânticos + tipo `decision`**: aplicável — o histórico deste repo já usa
-  `feat:`/`fix:` de forma inconsistente (`Feat:` maiúsculo em alguns commits); vale
-  padronizar e adotar `decision:` para decisões como as registradas acima.
+- **Commits semânticos + tipo `decision`**: **implementado** (commit `79817b1`) — convenção
+  documentada em `CLAUDE.md` e validada por `.githooks/commit-msg`
+  (`git config core.hooksPath .githooks` para ativar por clone/sessão).
 - **CI com suíte de testes e piso de cobertura**: aplicável e é um gap real — não existe
   `.github/` neste repositório, nada roda automaticamente (nem os testes Python já
   existentes em `src/tests/`).
@@ -63,5 +67,5 @@ Avaliação rápida do que se aplica aqui:
   seria mais robusto (e teria ajudado a expor o bug do mock com path errado
   `scr.documentation...` em vez de `src.documentation...`).
 
-Nenhuma dessas foi implementada ainda — registradas aqui para não se perder caso a decisão
-de adotá-las seja tomada numa sessão futura.
+As demais seguem não implementadas — registradas aqui para não se perder caso a decisão de
+adotá-las seja tomada numa sessão futura.
